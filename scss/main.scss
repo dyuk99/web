@@ -1,0 +1,128 @@
+* {
+  outline:0;
+}
+body {
+  height: 2000px;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif, Verdana;
+  .over-topnav {
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    text-align: center;
+    height: 200px;
+    background-color: darkgray;
+    color:white;
+    font-size: 30px;
+    padding-top: 120px;
+    background: url(../background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    @media (max-width: 568px) {
+      background-attachment: scroll;
+    }
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: #2D2F37;
+    width: 100%;
+    height:50px;
+    &.fixed {
+      position: fixed;
+      top:0;
+    }
+    a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 15px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      &:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      &.active {
+        background-color: #F49C4A;
+        color: white;
+      }
+      &.icon {
+        display: none;
+        font-size:15px;
+        padding: 16px;
+      }
+    }
+  }
+  .content {
+    padding-left:20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;height: auto;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  display:none;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bounce-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

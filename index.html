@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id="root">
+            <div class="over-topnav">
+                Some content
+            </div>
+            <div class="topnav" v-bind:class="{responsive : isDefaultTopNav,  fixed : scrolled}" id="myTopnav">
+                <transition name="fade">
+                <div v-if="!isDefaultTopNav">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                    <a href="javascript:void(0);" class="icon" @click="changeMenu()">&#9776;</a>
+                </div>
+                </transition>
+                <transition name="bounce">
+                    <div v-if="isDefaultTopNav">
+                        <a href="#home" class="active">Home</a>
+                        <a href="#news">News</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#about">About</a>
+                        <a href="javascript:void(0);" class="icon" @click="changeMenu()">&#9776;</a>
+                    </div>
+                </transition>
+            </div>
+            <div class="content">
+                <h2>Some heading</h2>
+                <p>Some other content</p>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
